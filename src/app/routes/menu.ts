@@ -37,6 +37,10 @@ const Material = {
         {
             text: "ng2Material",
             link: "/material/ngmaterial"
+        },
+        {
+            text: "table",
+            link: "/material/table"
         }
     ],
     "alert": "new",

@@ -12,9 +12,9 @@ import { ColorsComponent } from './colors/colors.component';
 import { NgmaterialComponent } from './ngmaterial/ngmaterial.component';
 import { DialogResultExampleDialog } from './ngmaterial/dialog.component';
 import { PizzaPartyComponent } from './ngmaterial/snackbar.component';
-import { TableFiltering } from './table/table.component'
+import { TableFilteringComponent } from './table/table.component'
 const routes: Routes = [
-    {path: 'table', component: TableFiltering},
+    {path: 'table', component: TableFilteringComponent},
     { path: 'cards', component: CardsComponent },
     { path: 'forms', component: FormsComponent },
     { path: 'inputs', component: InputsComponent },
@@ -27,7 +27,7 @@ const routes: Routes = [
 @NgModule({
     imports: [
         SharedModule,
-        RouterModule.forChild(routes),
+        //RouterModule.forChild(routes),
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyBNs42Rt_CyxAqdbIBK0a5Ut83QiauESPA'
         })
@@ -42,14 +42,14 @@ const routes: Routes = [
         NgmaterialComponent,
         DialogResultExampleDialog,
         PizzaPartyComponent,
-        TableFiltering,
+        TableFilteringComponent,
     ],
     exports: [
-        RouterModule
+        TableFilteringComponent
     ],
     entryComponents: [
         DialogResultExampleDialog,
         PizzaPartyComponent
     ]
 })
-export class MaterialModule { }
+export class ComponentsModule { }

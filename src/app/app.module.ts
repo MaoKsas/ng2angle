@@ -7,6 +7,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 
+//Globals Components 
+// import {ComponentsModule} from '../app/components/material/components.module';
+import {ComponentsModule} from './components/material/components.module';
 import { CoreModule } from './core/core.module';
 import { LayoutModule } from './layout/layout.module';
 import { SharedModule } from './shared/shared.module';
@@ -28,6 +31,7 @@ export function createTranslateLoader(http: HttpClient) {
         LayoutModule,
         SharedModule.forRoot(),
         RoutesModule,
+        ComponentsModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -36,7 +40,7 @@ export function createTranslateLoader(http: HttpClient) {
             }
         })
     ],
-    providers: [],
-    bootstrap: [AppComponent]
+    providers: [ComponentsModule],
+    bootstrap: [AppComponent ]
 })
 export class AppModule { }
