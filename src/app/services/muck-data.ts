@@ -12,3 +12,12 @@ export const ELEMENT_DATA: IPublisher[] = [
     {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
     {position: 11, name: 'Mauricio', weight: 20.1797, symbol: 'Mc'},
   ];
+
+  // const tagg= () => {
+    
+     
+  //   return    <span class="iconify" data-icon="simple-line-icons:options" data-inline="false"></span>
+   
+    
+
+  // }

@@ -12,7 +12,7 @@ import {IPublisher} from '../../../interfaces/table.interface';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    private displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+    private displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','mmmm'];
     private publishers: IPublisher[]= [];
 
 
