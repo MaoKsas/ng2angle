@@ -1,6 +1,10 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, ViewChild, TemplateRef, Input} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
+
+import {DataSource} from '@angular/cdk/collections';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 //data
 import { PublisherService } from '../../../services/publishers/publishers.services';
@@ -27,29 +31,48 @@ export class TableFilteringComponent {
     this.publishers = publisherData.getpublisher();
     this.dataSource = new MatTableDataSource(this.publishers);
   }
-  // constructor(private data: any ){
-  //   this.publishers = publisherData.getpublisher();
-  //   this.dataSource = new MatTableDataSource(this.publishers);
-  // }
 
-  displayedColumns : string[]=['position', 'name', 'weight', 'symbol',]; 
+  // columns = [
+  //   { columnDef: 'position', header: 'No.',    cell: (element: any) => `${element.position}` },
+  //   { columnDef: 'name',     header: 'Name',   cell: (element: any) => `${element.name}`     },
+  //   { columnDef: 'weight',   header: 'Weight', cell: (element: any) => `${element.weight}`   },
+  //   { columnDef: 'symbol',   header: 'Symbol', cell: (element: any) => `${element.symbol}`   },
+  // ];
 
-  columnsToDisplay: string[] = this.displayedColumns.slice();
-  columns= [
-    {title:"Position", name:"position"},
-    {title:"Name", name:"name"},
-    {title:"Weight", name:"weight"},
-    {title:"Symbol", name:"symbol"},
+  columns = [
+    { name: 'position', title: 'No.',    cell: (element: any) => `${element.position}` },
+    { name: 'name',     title: 'Name',   cell: (element: any) => `${element.name}`     },
+    { name: 'weight',   title: 'Weight', cell: (element: any) => `${element.weight}`   },
+    { name: 'symbol',   title: 'Symbol',   },
+    { name: 'actions',   title: 'Action', cell: (element: any) => {} },
   ];
+
+  displayedColumns = this.columns.map(c => c.name);
+
+  @Input() templateRef: TemplateRef<any>;// this line in for templates test
+
+
+ 
+
+  // displayedColumns : string[]=['position', 'name', 'weight', 'symbol',]; 
+
+  // columnsToDisplay: string[] = this.displayedColumns.slice();
+  // columns= [
+  //   {title:"Position", name:"position"},
+  //   {title:"Name", name:"name"},
+  //   {title:"Weight", name:"weight"},
+  //   {title:"Symbol", name:"symbol"},
+  //   {title:"Actions", name:"actions"},
+  // ];
   
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   ngOnInit() {
     this.dataSource.sort = this.sort;
   }
-  addColumn() {
-    const randomColumn = this.displayedColumns.length;
-    this.columnsToDisplay.push(this.displayedColumns[randomColumn]);
-  }
+  // addColumn() {
+  //   const randomColumn = this.displayedColumns.length;
+  //   this.columnsToDisplay.push(this.displayedColumns[randomColumn]);
+  // }
 
   onClick2(i: number, col: any){
     console.log(i);
