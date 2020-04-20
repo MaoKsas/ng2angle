@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ComponentsModule} from '../../components/material/components.module';
 const routes: Routes = [
     { path: '', component: HomeComponent },
+   
 ];
 
 @NgModule({

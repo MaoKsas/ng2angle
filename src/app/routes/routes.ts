@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from '../layout/layout.component';
+import {CardsComponent} from '../components/material/cards/cards.component';
 
 export const routes: Routes = [
 
@@ -9,6 +10,7 @@ export const routes: Routes = [
         children: [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+            { path: 'publisher/:id', component: CardsComponent },
             { path: 'material', loadChildren: () => import('./material/material.module').then(m => m.MaterialModule) }
         ]
     },

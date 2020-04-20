@@ -14,7 +14,7 @@ import { DialogResultExampleDialog } from './ngmaterial/dialog.component';
 import { PizzaPartyComponent } from './ngmaterial/snackbar.component';
 import { TableFilteringComponent } from './table/table.component'
 const routes: Routes = [
-    {path: 'table', component: TableFilteringComponent},
+    // {path: 'table', component: TableFilteringComponent},
     { path: 'cards', component: CardsComponent },
     { path: 'forms', component: FormsComponent },
     { path: 'inputs', component: InputsComponent },
@@ -45,7 +45,7 @@ const routes: Routes = [
         TableFilteringComponent,
     ],
     exports: [
-        TableFilteringComponent
+         TableFilteringComponent
     ],
     entryComponents: [
         DialogResultExampleDialog,
