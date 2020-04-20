@@ -10,7 +10,7 @@
 
   <ng-container *ngFor='let col of columns; let i = index' matColumnDef="{{col.name}}" > <!--MatColumnDef is column name -->
     <th mat-header-cell *matHeaderCellDef mat-sort-header> {{col.title}} </th> <!--*MatHeaderCellDef is -->
-    <td mat-cell *matCellDef="let element">{{element[col.name]}} </td>
+    <td mat-cell *matCellDef="let element">{{element[col.name]}}</td>
     <ng-container *ngTemplateOutlet="templateRef"></ng-container> <!--esta linea es de prueba para template-->
   </ng-container>
  

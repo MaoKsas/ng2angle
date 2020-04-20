@@ -2,7 +2,7 @@ import {Component, ViewChild, TemplateRef, Input} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 
-import {DataSource} from '@angular/cdk/collections';
+// import {DataSource} from '@angular/cdk/collections';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
@@ -25,32 +25,17 @@ export interface PeriodicElement {
 })
 export class TableFilteringComponent {
 
-  publishers: PeriodicElement[];
-  
+  private dataSource;
+  private displayedColumns;
 
-  // @Input() columns: any;
-  // @Input() dataIn: any;
-  constructor(private publisherData: PublisherService){
-    this.publishers = publisherData.getpublisher();
-  }
-  
-  columns = [
-      { name: 'position', title: 'No.',    cell: (element: any) => `${element.position}` },
-      { name: 'name',     title: 'Name',   cell: (element: any) => `${element.name}`     },
-      { name: 'weight',   title: 'Weight', cell: (element: any) => `${element.weight}`   },
-      { name: 'symbol',   title: 'Symbol',   },
-      { name: 'actions',   title: 'Action', cell: (element: any) => {} },
-    ];
-    
-    
-    
-    displayedColumns = this.columns.map(c => c.name);
-    dataSource = new MatTableDataSource(this.publishers);
+  @Input() columns: any= {};
+  @Input() dataIn: any = [];
+  constructor(){}
 
-    // dataSource = new MatTableDataSource(this.dataIn);
-    
-    @ViewChild(MatSort, {static: true}) sort: MatSort;
-    ngOnInit() {
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  ngOnInit() {
+    this.displayedColumns = this.columns.map(c => c.name);
+    this.dataSource = new MatTableDataSource(this.dataIn);
       this.dataSource.sort = this.sort;
   }
 

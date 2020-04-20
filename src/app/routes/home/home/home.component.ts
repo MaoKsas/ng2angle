@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     private ipc: IpcRenderer
     constructor(private publisherData: PublisherService) {
       this.publishers = publisherData.getpublisher();
-      
+
         if ((<any>window).require) {
             try {
               this.ipc = (<any>window).require('electron').ipcRenderer;
