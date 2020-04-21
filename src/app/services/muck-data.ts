@@ -1,5 +1,5 @@
-import {IPublisher} from '../interfaces/table.interface';
-export const ELEMENT_DATA: IPublisher[] = [
+import {IPublisher, IPeriodElment} from '../interfaces/table.interface';
+export const ELEMENT_DATA: IPeriodElment[] = [
     {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
     {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
     {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
@@ -15,7 +15,7 @@ export const ELEMENT_DATA: IPublisher[] = [
 
   
 
-  const publishers = [
+  export const PUBLISHERS = [
     { id:1, group: 1, name: "Reynaldo Demetrio Ramirez Guarate"},
     { id:2, group: 1, name: "Ana Rosa Ramirez (Noriega Cavadia)"},
     { id:3, group: 1, name: "Samuel Enrique Ramirez Rodriguez"},

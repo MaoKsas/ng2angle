@@ -13,10 +13,9 @@ export class HomeComponent implements OnInit {
     private displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
     private publishers: IPublisher[]= [];
     public  columns = [
-      { name: 'position', title: 'No.',    cell: (element: any) => `${element.position}` },
+      { name: 'id', title: 'Id.',    cell: (element: any) => `${element.id}` },
+      { name: 'group',   title: 'Group', cell: (element: any) => `${element.group}`   },
       { name: 'name',     title: 'Name',   cell: (element: any) => `${element.name}`     },
-      { name: 'weight',   title: 'Weight', cell: (element: any) => `${element.weight}`   },
-      { name: 'symbol',   title: 'Symbol',   },
       { name: 'actions',   title: 'Action', cell: (element: any) => {} },
     ];
 
